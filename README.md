@@ -77,6 +77,8 @@
 <br/>
 
 Este projeto implementa um **Login App** simples para o **Trabalho Prático – Ciclo 01**, com **frontend** e **backend** para consolidar conceitos de cliente-servidor e comunicação HTTP. O backend expõe um endpoint `POST /login` que valida credenciais **estáticas** (sem banco de dados) e responde com os **status codes** exigidos (200/401/400). O frontend (feito pelo Eduardo) envia a requisição e exibe mensagens de sucesso/erro conforme a resposta do servidor. Os testes da API podem ser feitos via **Insomnia**.
+<br/>
+O backend utiliza o middleware CORS configurado com origin: "\*", permitindo que o frontend rode em uma porta diferente (ex.: 3000) e ainda consiga se comunicar com o backend sem erros de bloqueio de navegador.
 
 **Principais objetivos:**
 
@@ -94,7 +96,6 @@ Este projeto implementa um **Login App** simples para o **Trabalho Prático – 
 
 - **Backend:** Node.js, Express, TypeScript
 - **Ferramentas de Dev:** ts-node-dev, npm
-- **Testes de API:** Insomnia
 - **Controle de versão:** Git/GitHub
 - **Frontend:** HTML, CSS, JavaScript (consumindo `POST /login`)
 
@@ -133,6 +134,12 @@ Este guia explica como configurar e executar o projeto localmente.
    npm run dev
    ```
 
+   Saída esperada no terminal:
+
+   ```bash
+   ✅ Backend (TS) funcionando em http://localhost:3333
+   ```
+
    Build e execução em produção:
 
    ```bash
@@ -145,6 +152,42 @@ Este guia explica como configurar e executar o projeto localmente.
    ```bash
    http://localhost:3333
    ```
+
+4. Rodar o frontend (num segundo terminal/aba do seu editor de texto)
+
+   No VS Code, abra outra aba de terminal:
+
+   Menu: Terminal > New Terminal ou use o botão de Split Terminal.
+
+   Então rode:
+
+   ```bash
+    cd frontend\login
+    npm i
+    npm start
+   ```
+
+   O frontend estará disponível em:
+
+   ```bash
+   http://localhost:3000
+   ```
+
+5. Testando no navegador
+
+Acesse **http://localhost:3000**;
+
+Preencha os campos:
+
+_Usuário:_ **admin**
+
+_Senha:_ **123456**
+
+Clique em Entrar:
+
+✅ Credenciais corretas → aparece mensagem de sucesso
+
+❌ Credenciais incorretas → aparece mensagem de erro
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
@@ -184,9 +227,9 @@ Exemplo de fluxo:
 - [x] Configuração do backend com Express + TypeScript
 - [x] Implementação do endpoint `/health`
 - [x] Implementação do endpoint `/login` com retornos 200/401/400
-- [ ] Desenvolvimento da tela de login no frontend
-- [ ] Integração frontend ↔ backend
-- [ ] Testes finais e ajustes para apresentação
+- [x] Desenvolvimento da tela de login no frontend
+- [x] Integração frontend ↔ backend
+- [x] Testes finais e ajustes para apresentação
 
 Consulte as issues abertas para ver o progresso e sugerir melhorias:  
 https://github.com/Bbragaa/sd-c1-login/issues
@@ -212,7 +255,8 @@ Diretrizes resumidas:
 
 ## Licença
 
-Distribuído sob a licença MIT ou de uso interno.
+Distribuído sob a licença MIT.  
+Consulte o arquivo [LICENSE](./LICENSE) para mais informações.
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
