@@ -286,5 +286,5 @@ Consulte o arquivo [LICENSE](./LICENSE) para mais informações.
 [stars-url]: https://github.com/Bbragaa/sd-c1-login/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Bbragaa/sd-c1-login.svg?style=for-the-badge
 [issues-url]: https://github.com/Bbragaa/sd-c1-login/issues
-[license-shield]: https://img.shields.io/github/license/Bbragaa/sd-c1-login.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/Bbragaa/sd-c1-login.svg?style=for-the-badge&v=2
 [license-url]: https://github.com/Bbragaa/sd-c1-login/blob/main/LICENSE
