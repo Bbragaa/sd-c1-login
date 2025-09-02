@@ -5,6 +5,7 @@ export default function Login() {
   const [username, setUsuario] = useState("");
   const [password, setSenha] = useState("");
   const [mensagem, setMensagem] = useState("");
+const [sucesso, setSucesso] = useState(null);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -18,13 +19,16 @@ export default function Login() {
 
       if (response.ok) {
         const data = await response.json();
-        setMensagem(`Sucesso no login`);
+        setMensagem("Sucesso no login");
+        setSucesso(true);
       } else {
         const errorData = await response.json();
-        setMensagem(`Erro no login`);
+        setMensagem("Erro no login");
+        setSucesso(false);
       }
     } catch (error) {
       setMensagem("Erro de conexão com o servidor");
+      setSucesso(false);
     }
   };
 
@@ -47,7 +51,11 @@ export default function Login() {
           required
         />
         <button type="submit">Entrar</button>
-        {mensagem && <p className="mensagem">{mensagem}</p>}
+        {mensagem && (
+          <p className={`mensagem ${sucesso ? "sucesso" : "erro"}`}>
+            {mensagem}
+          </p>
+        )}
       </form>
     </div>
   );
