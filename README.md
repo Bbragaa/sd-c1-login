@@ -72,7 +72,7 @@
 
 <br/>
 <p align="center">
-  <img src="documents/images/product_image_not_found.webp" alt="Screenshot do Produto" width="400" height = "400">
+  <img src="./backend/documents/images/app.png" alt="Screenshot do Produto" width="1000" height = "450">
 </p>
 <br/>
 
